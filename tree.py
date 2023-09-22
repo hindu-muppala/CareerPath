@@ -21,23 +21,31 @@ class graph():
     def __init__(self):
         self.Mainnode=degree(10.0,"tenth")
 
-def travesalByTime(t, n, path):
+def travesalByTime(t, n, path,pathList):
     new_path = path+ '-->' + str(n.name)
     if len(n.child) == 0:
-        print(new_path)
+       # print(new_path)
+        pathList.append(new_path)
+        return pathList
     for i in n.child:
         if i.time <= t:
-            travesalByTime(t, i.next, new_path)
-def traversalByJob(job, n, path):
+            pathList=travesalByTime(t, i.next, new_path,pathList)
+    return pathList
+def traversalByJob(job, n, path,pathList):
     new_path = path+ '-->' +str(n.name)
     if str(n.name) == job:
-        print(new_path)
+     #   print(new_path)
+        pathList.append(new_path)
+        return pathList
     for i in n.child:
-        traversalByJob(job, i.next, new_path)
+        pathList=traversalByJob(job, i.next, new_path,pathList)
+    return pathList
 def traversalBySalary(jlist,salary):
+    Output_list=[]
     for i in jlist:
         if salary > i.sal[0] and salary < i.sal[1]:
-            traversalByJob(i.name,CareerPath.Mainnode,'')
+            Output_list.extend(traversalByJob(i.name,CareerPath.Mainnode,'',[]))
+    return Output_list
 d1=degree(12.0,"Intermediate MPC")
 d5=degree(13.1,"Polytechnic CSE")
 d10=degree(16.1,"BTech IT")
@@ -53,13 +61,12 @@ j7=job(108,"Indian Air",(1.5,13))
 j8=job(109,"Indian Navy",(6,30))
 jlist=[j0,j1,j2,j3,j5,j6,j7,j8]
 CareerPath=graph()
-CareerPath.Mainnode.child=[edge(2,d1),edge(3,d5)
-                           ]
+CareerPath.Mainnode.child=[edge(2,d1),edge(3,d5)]
 d1.child=[edge(6,d10),edge(6,d11)]
 d5.child=[edge(6,d10),edge(6,d11)]
 d10.child=[edge(6,j2),edge(6,j0),edge(6,j1),edge(6,j5)]
 d12.child=[edge(6,j2),edge(6,j0),edge(6,j1),edge(6,j5),edge(9,d11)]
 d11.child=[edge(9,j3)]
-travesalByTime(6,CareerPath.Mainnode,"")
-traversalByJob("Data Analyst", CareerPath.Mainnode, "")
-traversalBySalary(jlist,12)
+print(travesalByTime(6,CareerPath.Mainnode,"",[]))
+print(traversalByJob("Data Analyst", CareerPath.Mainnode, "",[]))
+print(traversalBySalary(jlist,12))
