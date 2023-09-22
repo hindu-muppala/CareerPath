@@ -1,13 +1,16 @@
 class edge():
-    def __init__(self,time):
+    def __init__(self,time,test=None):
         self.time=time
+        self.test=test     
 class node():
     def __init__(self,value,name):
         self.value=value
         self.name=name
-class degree(node):
+        self.child=[]
+class degree(node): 
     def getName(self):
-        return self.job
+        return self.name
+
 class job(node):
     def __init__(self,sal):
         self.sal=sal
@@ -15,7 +18,7 @@ class job(node):
         return self.name
 class graph():
     def __init__(self,degree):
-        self.Mainnode=degree(10)
+        self.Mainnode=degree("tenth",10)
     def traversalByTime(time):
         pass
     def traversalByJob(job):
@@ -23,5 +26,7 @@ class graph():
     def traversalBySalary(salary):
         pass
 
-    
+d1=degree("Intermediate M",12.0)
+d2=degree("Intermediate ",12.1)
+d3=degree("Intermediate")
         
