@@ -13,10 +13,13 @@ class job(node):
         return self.name
 class graph():
     def __init__(self):
-        
-    def traversalByTime():
-
-    def traversalBy
+        pass
+    def traversalByTime(time):
+        pass
+    def traversalByJob(job):
+        pass
+    def traversalBySalary(salary):
+        pass
 
     
         
