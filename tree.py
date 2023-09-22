@@ -40,6 +40,6 @@ d9=degree(16.0,"BTech CSE")
 d10=degree(16.1,"BTech IT")
 d11=degree(21,"LLB")
 d12=degree(22,"Bachelors")
-j0=job(23,"IFS",())
-j1=job(24,"IAS",())
+j0=job(101,"IFS",())
+j1=job(102,"IAS",())
         
