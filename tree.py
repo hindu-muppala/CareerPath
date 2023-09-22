@@ -60,6 +60,6 @@ d5.child=[edge(6,d10),edge(6,d11)]
 d10.child=[edge(6,j2),edge(6,j0),edge(6,j1),edge(6,j5)]
 d12.child=[edge(6,j2),edge(6,j0),edge(6,j1),edge(6,j5),edge(9,d11)]
 d11.child=[edge(9,j3)]
-# travesalByTime(6,CareerPath.Mainnode,"")
+travesalByTime(6,CareerPath.Mainnode,"")
 traversalByJob("Data Analyst", CareerPath.Mainnode, "")
-# traversalBySalary(jlist,12)
+traversalBySalary(jlist,12)
