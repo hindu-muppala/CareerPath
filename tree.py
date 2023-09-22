@@ -12,10 +12,12 @@ class degree(node):
         return self.name
 
 class job(node):
-    def __init__(self,sal):
+    def __init__(self,value,name,sal):
+        super.__init__(value,name)
         self.sal=sal
     def getName(self):
         return self.name
+    
 class graph():
     def __init__(self,degree):
         self.Mainnode=degree("tenth",10)
@@ -26,7 +28,18 @@ class graph():
     def traversalBySalary(salary):
         pass
 
-d1=degree("Intermediate M",12.0)
-d2=degree("Intermediate ",12.1)
-d3=degree("Intermediate")
+d1=degree(12.0,"Intermediate MPC")
+d2=degree(12.1,"Intermediate BiPC")
+d3=degree(12.2,"CEC")
+d4=degree(13.0,"Polytechnical Mechanical")
+d5=degree(13.1,"Polytechnic CSE")
+d6=degree(13.2,"Polytechnic Civil")
+d7=degree(13.3,"Polytechnic IT")
+d8=degree(13.4,"Polytechnic Aeronautical")
+d9=degree(16.0,"BTech CSE")
+d10=degree(16.1,"BTech IT")
+d11=degree(21,"LLB")
+d12=degree(22,"Bachelors")
+j0=job(23,"IFS",())
+j1=job(24,"IAS",())
         
